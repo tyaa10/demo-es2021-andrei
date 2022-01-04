@@ -182,7 +182,7 @@ console.log(people[3].toString(), ', ' ,people[4]) */
 
 const numbers = [1, -1, 0, 100, 15, -4]
 
-function mySort(array) {
+function mySort(array, compare) {
   // предполагаем, что массив не упорядочен
   let isSorted
   do {
@@ -194,7 +194,7 @@ function mySort(array) {
       const next = array[i + 1]
       // условие сравнения текущего числового элемента массива
       // со следующим для упорядочения по возрастанию
-      if (next - current > 0) {
+      if (compare(next, current) > 0) {
         // если два рядом лежащих элемента - не в желаемом порядке -
         // - меняем их местами
         array[i] = next
@@ -211,6 +211,25 @@ function mySort(array) {
   // цикл do-while нужно выполнить еще раз, то есть выполнить его слудующий шаг
 }
 
-mySort(numbers)
+// const names = ['Noname', 'Bill', 'John', 'Boris', 'Mary']
+const people = [
+  {
+    name: 'John',
+    age: 31
+  },
+  {
+    name: 'Bill',
+    age: 66
+  },
+  {
+    name: 'Mary',
+    age: 20
+  }
+]
+// mySort(numbers, (a, b) => a - b)
+// mySort(numbers, (a, b) => b - a)
+// mySort(names, (a, b) => a.localeCompare(b))
+// mySort(people, (a, b) => b.name.localeCompare(a.name))
+mySort(people, (a, b) => b.age - a.age)
 
-console.log(numbers)
+console.log(people)

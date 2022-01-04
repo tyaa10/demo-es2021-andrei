@@ -230,9 +230,45 @@ const people = [
 // mySort(numbers, (a, b) => b - a)
 // mySort(names, (a, b) => a.localeCompare(b))
 // mySort(people, (a, b) => b.name.localeCompare(a.name))
-mySort(people, (a, b) => b.age - a.age)
+// mySort(people, (a, b) => b.age - a.age)
 
-console.log(people)
+// console.log(people)
 
 // demo changes 1
 // demo changes 2
+
+// OOP - 2
+
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+    // метод, вызвав который можно получить строку,
+    // представляющую текущий объект Person
+    this.toString = function () {
+      return `Person {name: ${this.name}, age: ${this.age}}`
+    }
+  }
+}
+// inheritance sample
+class Student extends Person {
+  // описание конструктора дочернего класса Student
+  constructor(name, age, avgScore) {
+    // вызов конструктора родительского класса Person
+    super(name, age)
+    // расширение набора свойств, полученных по наследству,
+    // новым свойством "средний балл успеваемости"
+    this.avgScore = avgScore
+    // переопределение метода toString
+    this.toString = function () {
+      return `Person {name: ${this.name}, age: ${this.age}, avgScore: ${avgScore}}`
+    }
+  }
+}
+
+// Наследовать в новом классе Teacher класс Person,
+// расширить свойством "ставка зарплаты" - this.salary
+
+const st1 = new Student('St1', 18, 10.5)
+console.log(st1.toString())
+// console.log(st1)

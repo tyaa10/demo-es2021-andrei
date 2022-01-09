@@ -211,28 +211,14 @@ function mySort(array, compare) {
   // цикл do-while нужно выполнить еще раз, то есть выполнить его слудующий шаг
 }
 
-// const names = ['Noname', 'Bill', 'John', 'Boris', 'Mary']
-const people = [
-  {
-    name: 'John',
-    age: 31
-  },
-  {
-    name: 'Bill',
-    age: 66
-  },
-  {
-    name: 'Mary',
-    age: 20
-  }
-]
+import people0 from './data.mjs'
 // mySort(numbers, (a, b) => a - b)
 // mySort(numbers, (a, b) => b - a)
 // mySort(names, (a, b) => a.localeCompare(b))
 // mySort(people, (a, b) => b.name.localeCompare(a.name))
 // mySort(people, (a, b) => b.age - a.age)
 
-// console.log(people)
+console.log(people0)
 
 // demo changes 1
 // demo changes 2
@@ -339,13 +325,13 @@ class Teacher extends Person {
  names.push('John')
  console.log(names) */
 
- const people2 = new Map() // словарь
- people2.set('John', 30)
- people2.set('Bill', 20)
- people2.set('Bill', 40)
- console.log(people2)
- console.log(people2.has('Bill'))
- console.log(people2.has('Mary'))
- console.log(people2.get('Bill'))
+ const people = new Map() // словарь
+ people.set('John', 30)
+ people.set('Bill', 20)
+ people.set('Bill', 40)
+ console.log(people)
+ console.log(people.has('Bill'))
+ console.log(people.has('Mary'))
+ console.log(people.get('Bill'))
 
  // test comment

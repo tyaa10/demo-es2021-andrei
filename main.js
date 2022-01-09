@@ -347,3 +347,5 @@ class Teacher extends Person {
  console.log(people2.has('Bill'))
  console.log(people2.has('Mary'))
  console.log(people2.get('Bill'))
+
+ // test comment
